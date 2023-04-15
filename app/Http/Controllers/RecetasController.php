@@ -28,6 +28,8 @@ class RecetasController extends Controller
         $grasas=0;
         $carbohidratos=0;
         $pesoTotal = 0;
+
+
         $receta = Receta::create([
             'nombre'=>$request->nombre,
             'descripcion'=>$request->descripcion,
