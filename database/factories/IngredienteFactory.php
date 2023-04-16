@@ -24,7 +24,7 @@ class IngredienteFactory extends Factory
             "kcal"=> $this->faker->numberBetween(50,200),
             "proteinas"=>$this->faker->numberBetween(50, 150),
             "grasas"=>$this->faker->numberBetween(50,100),
-            "carbohidratos"=>100
+            "carbohidratos"=>$this->faker->numberBetween(50,100)
         ];
     }
 }
