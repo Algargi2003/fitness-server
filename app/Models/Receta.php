@@ -23,4 +23,7 @@ class Receta extends Model
     public function ingredientes(){
         return $this->hasMany(Ingrediente::class);
     }
+    public function menuDiarioGeneral(){
+        return $this->belongsToMany(MenuDiarioGeneral::class);
+    }
 }
