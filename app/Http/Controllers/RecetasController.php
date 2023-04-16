@@ -40,12 +40,20 @@ class RecetasController extends Controller
             IngredienteReceta::create([
                 'ingrediente_id'=>$ingrediente_id,
                 'receta_id'=>$receta->id,
-                'cantidad'=>$peso
+                'cantidad'=>$peso,
+                'kcal'=>$ingred->kcal*$peso/100,
+                'proteinas'=>$ingred->proteinas*$peso/100,
+                'grasas'=>$ingred->grasas*$peso/100,
+                'carbohidratos'=>$ingred->carbohidratos*$peso/100
             ]);
-            $kcal = $kcal+$ingred->kcal;
-            $proteinas = $proteinas+$ingred->proteinas;
-            $grasas = $grasas+$ingred->grasas;
-            $carbohidratos = $carbohidratos+$ingred->carbohidratos;
+            $relacionCalorias = ($ingred->kcal*$peso)/100;
+            $relacionProteinas = $ingred->proteinas*$peso/100;
+            $relacionGrasas = $ingred->grasas*$peso/100;
+            $relacionCarboHidratos = $ingred->carbohidratos*$peso/100;
+            $kcal = $kcal+$relacionCalorias;
+            $proteinas = $proteinas+$relacionProteinas;
+            $grasas = $grasas+$relacionGrasas;
+            $carbohidratos = $carbohidratos+$relacionCarboHidratos;
             $pesoTotal = $pesoTotal+$peso;
         }
         $recCambiar = Receta::find($receta->id);
@@ -61,27 +69,30 @@ class RecetasController extends Controller
 
     public function ingredientesReceta(int $id){
         $ir = IngredienteReceta::where('receta_id',$id)->get();
-        $ingredientes = $ir->map(function($rec){
-            $ing =  Ingrediente::find($rec->ingrediente_id);
-            return [
-                'id'=>$ing->id,
-                'nombre'=>$ing->nombre,
-                'kcal'=>$ing->kcal,
-                'proteinas'=>$ing->proteinas,
-                'grasas'=>$ing->grasas,
-                'carbohidratos'=>$ing->carbohidratos,
-                'cantidad'=>$rec->cantidad
-            ];
-        });
-        return $ingredientes;
+        $receta = Receta::find($id);
+
+        // $ingredientes = $ir->map(function($rec){
+        //     $ing =  Ingrediente::find($rec->ingrediente_id);
+        //     return [
+        //         // 'id'=>$ing->id,
+        //         // 'nombre'=>$ing->nombre,
+        //         // 'kcal'=>$rec->kcal,
+        //         // 'proteinas'=>$rec->proteinas,
+        //         // 'grasas'=>$rec->grasas,
+        //         // 'carbohidratos'=>$rec->carbohidratos,
+        //         // 'cantidad'=>$rec->cantidad
+        //         $ing
+        //     ];
+        // });
+        return $ir;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        return Receta::find($id);
     }
 
     /**

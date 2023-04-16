@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/recetas',[RecetasController::class,'index'])->name('recetas.index');
+Route::get('/recetas/{id}',[RecetasController::class,'show'])->name('recetas.show');
 
 Route::get('/ingredientes',[IngredientesController::class,'index'])->name('ingredientes.index');
 Route::post('/recetas',[RecetasController::class,'store'])->name('recetas.crear');

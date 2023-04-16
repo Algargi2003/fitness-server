@@ -11,7 +11,11 @@ class IngredienteReceta extends Model
     protected $fillable=[
         'ingrediente_id',
         'receta_id',
-        'cantidad'
+        'cantidad',
+        'kcal',
+        'proteinas',
+        'grasas',
+        'carbohidratos'
     ];
     protected $table='ingrediente_receta';
 }
