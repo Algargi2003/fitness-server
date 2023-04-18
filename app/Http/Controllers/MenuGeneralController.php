@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\MenuDiarioGeneral;
+use App\Models\Receta;
+use App\Models\RecetaMenuDiario;
 use Illuminate\Http\Request;
 
 class MenuGeneralController extends Controller
@@ -14,6 +16,16 @@ class MenuGeneralController extends Controller
     {
         $menus = MenuDiarioGeneral::all();
         return $menus;
+    }
+    public function recetasMenuDiarioGeneral(int $id){
+        $menu = MenuDiarioGeneral::find($id);
+        $mr = RecetaMenuDiario::where('menu_diario_id',$id)->get();
+
+        $recetas = $mr->map(function($rec){
+            return Receta::find($rec->receta_id);
+        });
+
+        return $recetas;
     }
 
     /**

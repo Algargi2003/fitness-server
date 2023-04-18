@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
             IngredientesSeeder::class,
             RecetasSeeder::class,
             UserSeeder::class,
-            RecetasIngredientesSeeder::class
+            RecetasIngredientesSeeder::class,
+            MenuDiarioGeneralSeeder::class,
+            RecetasMenuDiarioSeeder::class
         ]);
     }
 }

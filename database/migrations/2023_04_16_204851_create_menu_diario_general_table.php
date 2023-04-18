@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('menu_diario_general', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->integer('kcal');
-            $table->integer('proteinas');
-            $table->integer('grasas');
-            $table->integer('carbohidratos');
+            $table->integer('kcal')->nullable();
+            $table->integer('proteinas')->nullable();
+            $table->integer('grasas')->nullable();
+            $table->integer('carbohidratos')->nullable();
             $table->timestamps();
         });
     }

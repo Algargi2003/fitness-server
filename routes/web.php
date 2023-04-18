@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IngredientesController;
+use App\Http\Controllers\MenuGeneralController;
 use App\Http\Controllers\RecetasController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Route::get('/recetas/{id}',[RecetasController::class,'show'])->name('recetas.sho
 Route::get('/ingredientes',[IngredientesController::class,'index'])->name('ingredientes.index');
 Route::post('/recetas',[RecetasController::class,'store'])->name('recetas.crear');
 Route::get('/ingredientes/receta/{id?}',[RecetasController::class,'ingredientesReceta'])->name('ingredientes.receta');
+
+Route::get('/recetas/menu/{id}',[MenuGeneralController::class,'recetasMenuDiarioGeneral'])->name('recetas.menu');
+Route::get('/menus',[MenuGeneralController::class,'index'])->name('menus');
