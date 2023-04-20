@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('ingredientes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
-            $table->integer('kcal');
-            $table->integer('proteinas');
-            $table->integer('grasas');
-            $table->integer('carbohidratos');
+            $table->string('descripcion')->nullable();
+            $table->double('kcal')->nullable();
+            $table->double('proteinas')->nullable();
+            $table->double('grasas')->nullable();
+            $table->double('carbohidratos')->nullable();
             $table->timestamps();
         });
     }

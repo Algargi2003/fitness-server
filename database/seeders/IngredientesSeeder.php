@@ -3,16 +3,21 @@
 namespace Database\Seeders;
 
 use App\Models\Ingrediente;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use JeroenZwart\CsvSeeder\CsvSeeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class IngredientesSeeder extends Seeder
+class IngredientesSeeder extends CsvSeeder
 {
-    /**
-     * Run the database seeds.
-     */
+    public function __construct(){
+        $this->file = '/database/seeds/ingredientes.csv';
+        $this->truncate = false;
+        $this->tablename = 'ingredientes';
+    }
     public function run(): void
     {
-        Ingrediente::factory()->count(20)->create();
+        DB::disableQueryLog();
+        parent::run();
     }
 }

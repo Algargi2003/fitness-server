@@ -69,22 +69,22 @@ class RecetasController extends Controller
 
     public function ingredientesReceta(int $id){
         $ir = IngredienteReceta::where('receta_id',$id)->get();
-        $receta = Receta::find($id);
 
-        // $ingredientes = $ir->map(function($rec){
-        //     $ing =  Ingrediente::find($rec->ingrediente_id);
-        //     return [
-        //         // 'id'=>$ing->id,
-        //         // 'nombre'=>$ing->nombre,
-        //         // 'kcal'=>$rec->kcal,
-        //         // 'proteinas'=>$rec->proteinas,
-        //         // 'grasas'=>$rec->grasas,
-        //         // 'carbohidratos'=>$rec->carbohidratos,
-        //         // 'cantidad'=>$rec->cantidad
-        //         $ing
-        //     ];
-        // });
-        return $ir;
+
+        $ingredientes = $ir->map(function($rec){
+            $ing =  Ingrediente::find($rec->ingrediente_id);
+            // return Ingrediente::find($rec->ingrediente_id);
+            return [
+                'id'=>$ing->id,
+                'nombre'=>$ing->nombre,
+                'kcal'=>$rec->kcal,
+                'proteinas'=>$rec->proteinas,
+                'grasas'=>$rec->grasas,
+                'carbohidratos'=>$rec->carbohidratos,
+                'cantidad'=>$rec->cantidad
+            ];
+        });
+        return $ingredientes;
     }
 
     /**
