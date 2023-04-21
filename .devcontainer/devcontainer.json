@@ -1,0 +1,95 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.231.6/containers/php-mariadb
+// Update the VARIANT arg in docker-compose.yml to pick a PHP version
+{
+    "name": "Entorno Folioblanco",
+    // "remoteUser": "vscode",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        // "terminal.integrated.shell.linux": "/bin/zsh"
+        "terminal.integrated.profiles.linux": {
+            "zsh (login)": {
+                "path": "zsh",
+                "args": [
+                    "-l"
+                ]
+            }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh (login)",
+        "[php]": {
+            "editor.formatOnSave": true,
+            "editor.formatOnPaste": false,
+            "editor.defaultFormatter": "wongjn.php-sniffer"
+        },
+        "[blade]": {
+            "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+        },
+        "phpcs.standard": "phpcs.xml",
+        "phpcs.enable": true,
+        "[js]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "volar.completion.preferredTagNameCase": "pascal",
+        "volar.autoCompleteRefs": true
+    },
+    "runArgs": [
+		"--net", "host", 
+        "-e", "DISPLAY=host.docker.internal:0",
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
+    ],
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "xdebug.php-debug",
+        "bmewburn.vscode-intelephense-client",
+        "mrmlnc.vscode-apache",
+        "dbaeumer.vscode-eslint",
+        "amazonwebservices.aws-toolkit-vscode",
+        "apility.beautify-blade",
+        "formulahendry.auto-rename-tag",
+        "mhutchie.git-graph",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "visualstudioexptteam.vscodeintellicode",
+        "jcbuisson.vue",
+        "ikappas.phpcs",
+        "bmewburn.vscode-intelephense-client",
+        "hbenl.vscode-test-explorer",
+        "recca0120.vscode-phpunit",
+        "xdebug.php-debug",
+        "oderwat.indent-rainbow",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "GitHub.vscode-pull-request-github",
+        "ms-playwright.playwright",
+        "usernamehw.errorlens",
+        "kisstkondoros.vscode-gutter-preview",
+        "onecentlin.laravel-blade",
+        "wongjn.php-sniffer",
+        "shufo.vscode-blade-formatter",
+        "esbenp.prettier-vscode",
+        "atlassian.atlascode",
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin",
+        "Vue.volar"
+    ],
+    // For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
+    "forwardPorts": [
+        80,
+        3306,
+        6379
+    ],
+    // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    "features": {
+        "sshd": "latest",
+        "python": "latest"
+    },
+
+    "containerUser": "root",
+    "remoteUser": "root",
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "sudo /workspace/.devcontainer/post-build/post-build.sh",
+    "postAttachCommand": "sudo /workspace/.devcontainer/post-build/post-attach.sh & sudo /workspace/.devcontainer/post-build/post-start.sh"
+}
