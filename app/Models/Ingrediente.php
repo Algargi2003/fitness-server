@@ -21,4 +21,7 @@ class Ingrediente extends Model
     public function recetas(){
         return $this->belongsToMany(Receta::class);
     }
+    public function recetasUsuario(){
+        return $this->belongsToMany(RecetasUsuario::class);
+    }
 }
