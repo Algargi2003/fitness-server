@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('elaboracion');
-            $table->integer('peso')->nullable();
-            $table->integer('kcal')->nullable();
-            $table->integer('proteinas')->nullable();
-            $table->integer('grasas')->nullable();
-            $table->integer('carbohidratos')->nullable();
+            $table->double('peso')->nullable();
+            $table->double('kcal')->nullable();
+            $table->double('proteinas')->nullable();
+            $table->double('grasas')->nullable();
+            $table->double('carbohidratos')->nullable();
             $table->timestamps();
         });
     }

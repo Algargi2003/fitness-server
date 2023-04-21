@@ -23,11 +23,11 @@ class RecetasController extends Controller
      */
     public function store(Request $request)
     {
-        $kcal = 0;
-        $proteinas=0;
-        $grasas=0;
-        $carbohidratos=0;
-        $pesoTotal = 0;
+        $kcal = 0.0;
+        $proteinas=0.0;
+        $grasas=0.0;
+        $carbohidratos=0.0;
+        $pesoTotal = 0.0;
 
 
         $receta = Receta::create([
@@ -41,15 +41,15 @@ class RecetasController extends Controller
                 'ingrediente_id'=>$ingrediente_id,
                 'receta_id'=>$receta->id,
                 'cantidad'=>$peso,
-                'kcal'=>$ingred->kcal*$peso/100,
-                'proteinas'=>$ingred->proteinas*$peso/100,
-                'grasas'=>$ingred->grasas*$peso/100,
-                'carbohidratos'=>$ingred->carbohidratos*$peso/100
+                'kcal'=>$ingred->kcal*$peso/100.0,
+                'proteinas'=>$ingred->proteinas*$peso/100.0,
+                'grasas'=>$ingred->grasas*$peso/100.0,
+                'carbohidratos'=>$ingred->carbohidratos*$peso/100.0
             ]);
-            $relacionCalorias = ($ingred->kcal*$peso)/100;
-            $relacionProteinas = $ingred->proteinas*$peso/100;
-            $relacionGrasas = $ingred->grasas*$peso/100;
-            $relacionCarboHidratos = $ingred->carbohidratos*$peso/100;
+            $relacionCalorias = ($ingred->kcal*$peso)/100.0;
+            $relacionProteinas = $ingred->proteinas*$peso/100.0;
+            $relacionGrasas = $ingred->grasas*$peso/100.0;
+            $relacionCarboHidratos = $ingred->carbohidratos*$peso/100.0;
             $kcal = $kcal+$relacionCalorias;
             $proteinas = $proteinas+$relacionProteinas;
             $grasas = $grasas+$relacionGrasas;
