@@ -4,15 +4,20 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use JeroenZwart\CsvSeeder\CsvSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class UserSeeder extends Seeder
+class UserSeeder extends CsvSeeder
 {
-    /**
-     * Run the database seeds.
-     */
+    public function __construct(){
+        $this->file = '/database/seeds/users.csv';
+        $this->truncate = false;
+        $this->tablename = 'users';
+    }
     public function run(): void
     {
-        User::factory()->count(1)->create();
+        DB::disableQueryLog();
+        parent::run();
     }
 }
