@@ -11,8 +11,10 @@ class RecetasUsuario extends Model
 
     protected $fillable =[
         'nombre',
+        'user_id',
         'descripcion',
         'elaboracion',
+        'tipo',
         'peso',
         'kcal',
         'proteinas',

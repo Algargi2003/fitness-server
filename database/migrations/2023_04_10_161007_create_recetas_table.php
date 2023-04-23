@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('elaboracion');
+            $table->string('tipo')->nullable();
             $table->double('peso')->nullable();
             $table->double('kcal')->nullable();
             $table->double('proteinas')->nullable();

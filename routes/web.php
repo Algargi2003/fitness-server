@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecetasController;
 use App\Http\Controllers\MenuGeneralController;
 use App\Http\Controllers\IngredientesController;
+use App\Http\Controllers\RecetasUsuarioController;
 use App\Http\Controllers\TestsController;
 
 /*
@@ -45,5 +46,8 @@ Route::get('/menus',[MenuGeneralController::class,'index'])->name('menus');
 
 Route::get('/tests',[TestsController::class,'index'])->name('tests.menu');
 Route::post('/tests',[TestsController::class,'store'])->name('tests.crear');
+
+Route::post('/recetaUsuario',[RecetasUsuarioController::class,'store'])->name('recetas.usuario');
+Route::get('/recetasUsuario',[RecetasUsuarioController::class,'index'])->name('recetas.usuario');
 
 require __DIR__.'/auth.php';

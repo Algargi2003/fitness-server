@@ -13,6 +13,7 @@ class Receta extends Model
         'nombre',
         'descripcion',
         'elaboracion',
+        'tipo',
         'peso',
         'kcal',
         'proteinas',

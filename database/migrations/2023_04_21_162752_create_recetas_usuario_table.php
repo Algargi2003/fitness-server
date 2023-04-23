@@ -16,11 +16,15 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('elaboracion');
+            $table->unsignedBigInteger('user_id');
+            $table->string('tipo')->nullable();
             $table->double('peso')->nullable();
             $table->double('kcal')->nullable();
             $table->double('proteinas')->nullable();
             $table->double('grasas')->nullable();
             $table->double('carbohidratos')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

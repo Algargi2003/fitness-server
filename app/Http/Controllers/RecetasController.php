@@ -33,7 +33,8 @@ class RecetasController extends Controller
         $receta = Receta::create([
             'nombre'=>$request->nombre,
             'descripcion'=>$request->descripcion,
-            'elaboracion'=>$request->elaboracion
+            'elaboracion'=>$request->elaboracion,
+            'tipo'=>$request->tipo
         ]);
         foreach($request->ingredientes as $ingrediente_id => $peso){
             $ingred = Ingrediente::find($ingrediente_id);

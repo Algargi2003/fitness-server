@@ -12,6 +12,7 @@ class RecetasUsuarioIngredientes extends Model
     protected $fillable=[
         'ingrediente_id',
         'receta_id',
+        //Para variar lo que necesita cada persona lo que cambia es la cantidad, no el ingrediente ni nada
         'cantidad',
         'kcal',
         'proteinas',
