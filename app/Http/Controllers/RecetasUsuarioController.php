@@ -34,12 +34,13 @@ class RecetasUsuarioController extends Controller
 
         $recetaGeneral = Receta::find($request->recetaGeneral_id);
         $test = Test::find($request->test_id);
-
+        
         $caloriasDesayuno = $test->kcal*$relacionDesayuno;
         $caloriasComida = $test->kcal*$relacionComida;
         $caloriasMerienda = $test->kcal*$relacionMerienda;
         $caloriasCena = $test->kcal*$relacionCena;
 
+        dd($caloriasComida);
 
         $ingredientesGeneralesRelacion = IngredienteReceta::where('receta_id', $recetaGeneral->id)->get();
         $ingredientesGenerales = $ingredientesGeneralesRelacion->map(function ($rec) {
@@ -77,6 +78,7 @@ class RecetasUsuarioController extends Controller
         $grasasFinales=0.0;
         $carbohidratosFinales=0.0;
         $pesoTotal = 0.0;
+        //revisar proteinasfinales, grasasfinales y carbohidratosfinales
         foreach ($ingredientesGenerales as $ingredDato => $ingredValor) {
             $caloriasObjetivo = 0;
             if($receta->tipo == 'desayuno'){
