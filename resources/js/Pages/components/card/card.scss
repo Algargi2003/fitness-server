@@ -1,25 +1,52 @@
-.card{
-
+.card {
     width: 350px;
     height: 250px;
     border-radius: 5px;
-
-    &-recetas{
-        background-color: blue;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 20px;
+    &-recetas {
+        background-image:linear-gradient(
+            rgba(243, 251, 129, 0.655),
+            rgba(0, 0, 0, 0.5)
+          ), url("../../../Images/recetasFoto2.jpg");
+        background-size: 350px;
+        height: 250px;
     }
-    &-rutinas{
-        background-color: rgb(168, 214, 27);
+    &-rutinas {
+        background-image:linear-gradient(
+            rgba(243, 251, 129, 0.655),
+            rgba(0, 0, 0, 0.5)
+          ), url("../../../Images/rutinaFoto.jpg");
+        background-size: 350px;
+        height: 250px;
     }
-    &-alimentos{
-        background-color: rgb(255, 175, 114);
+    &-alimentos {
+        background-image:linear-gradient(
+            rgba(243, 251, 129, 0.655),
+            rgba(0, 0, 0, 0.5)
+          ), url("../../../Images/alimentosFoto.jpg");
+        background-size: 350px;
+        height: 250px;
     }
-    &-calcular{
-        background-color: rgb(255, 107, 220);
+    &-calcular {
+        background-image:linear-gradient(
+            rgba(243, 251, 129, 0.655),
+            rgba(0, 0, 0, 0.5)
+          ), url("../../../Images/calcularFoto.jpg");
+        background-size: 350px;
+        height: 250px;
     }
-    &-tienda{
-        background-color: rgb(124, 132, 38);
-    }
-    &-blog{
+    &-productos {
+        background-image:linear-gradient(
+            rgba(243, 251, 129, 0.655),
+            rgba(0, 0, 0, 0.5)
+          ), url("../../../Images/productosFoto.jpg");
+        background-size: 350px;
+        height: 250px;    }
+    &-blog {
         background-color: purple;
     }
 }

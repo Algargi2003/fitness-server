@@ -22,7 +22,7 @@
                 <Card :valor="'rutinas'"></Card>
                 <Card :valor="'alimentos'"></Card>
                 <Card :valor="'calcular'"></Card>
-                <Card :valor="'tienda'"></Card>
+                <Card :valor="'productos'"></Card>
                 <Card :valor="'blog'"></Card>
             </div>
         </div>

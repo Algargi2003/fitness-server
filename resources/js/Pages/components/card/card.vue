@@ -3,9 +3,9 @@
     props.valor=='rutinas' ? 'card-rutinas':
     props.valor=='alimentos' ? 'card-alimentos':
     props.valor=='calcular' ? 'card-calcular':
-    props.valor=='tienda' ? 'card-tienda':
+    props.valor=='productos' ? 'card-productos':
     props.valor=='blog' ? 'card-blog':''">
-    hola
+    {{ props.valor.toUpperCase() }}
     </div>
 </template>
 <script lang="ts" setup>
