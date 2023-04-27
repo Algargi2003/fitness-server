@@ -2,7 +2,6 @@
 @import "../../scss/utils/variables.scss";
 @import "../../scss/utils/functions.scss";
 
-
 .fondo {
     height: 100%;
     background: rgb(2, 0, 36);
@@ -12,58 +11,102 @@
         rgba(67, 67, 228, 1) 30%,
         rgba(0, 212, 255, 1) 100%
     );
-    
-    
+
     // @include breakpoint("md") {
     //     background-image: url("../../../Images/fotoInicio4.jpg");
     //     background-repeat: no-repeat;
     //     background-size: 100%;
-        
+
     // }
 }
 
-.home{
-
-
-    &-texto-inicio{
+.home {
+    &-texto-inicio {
         padding-top: 30px;
         margin-left: 70px;
         color: white;
         font-size: 30px;
     }
-    &-foto{
+    &-foto {
         width: 100%;
     }
-    &-video{
+    &-video {
         width: 100%;
     }
-    &-info1{
+    &-info1 {
         height: 300px;
         background-color: black;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        &-titulo{
+        &-titulo {
             color: rgb(255, 241, 44);
             text-align: center;
             padding-top: 20px;
             font-size: 30px;
             font-weight: bold;
         }
-        &-texto{
+        &-texto {
             color: white;
             text-align: center;
             padding-top: 50px;
             width: 50%;
         }
     }
-    &-info2{
+    &-info2 {
         display: flex;
         flex-direction: column;
-        &-titulo{
-
+        justify-content: center;
+        background-color: black;
+        height: fit-content;
+        padding-bottom: 40px;
+        &-titulo {
+            color: rgb(255, 241, 44);
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 30px;
+            font-weight: bold;
         }
+        &-cards {
+            display: grid;
+            row-gap: 32px;
+            grid-template-columns: 1fr;
+            place-items: center;
+            place-content: center;
+            width: 90%;
+            padding-left: 40px;
+            @include breakpoint('sm'){
+                padding-left: 70px;
+                grid-template-columns: 1fr;
+            }
+            @include breakpoint('s'){
+                padding-left: 70px;
+                grid-template-columns: 1fr;
+            }
+            
+            @include breakpoint('md'){
+                grid-template-columns: 1fr 1fr;
+                column-gap: 20px;
+                padding-left: 70px;
+            }
+            @include breakpoint("l") {
+                grid-template-columns: 1fr 1fr;
+                column-gap: 48px;
+                padding-left: 70px;
+            }
 
+            @include breakpoint("xl") {
+                grid-template-columns: 1fr 1fr 1fr;
+                padding-left: 120px;
+            }
+
+            @include breakpoint("xxl") {
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: normal;
+                padding-left: 120px;
+            }
+        }
     }
 }

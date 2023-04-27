@@ -2,23 +2,27 @@
 @import "../../scss/utils/variables.scss";
 @import "../../scss/utils/functions.scss";
 
-
 .navbar {
     background: black;
     // padding: 8px;
     padding-top: 20px;
     padding-bottom: 80px;
     color: black;
-    
+    position: sticky;
+    top: 0;
+    z-index: 999;
     width: 100%;
-    font-size: font('2xs');
-    
+    font-size: font("2xs");
+    @include breakpoint("md") {
+        position:static;
+        top: 0;
+        z-index: 0;
+    }
 
     i {
-        font-size: font('sm');
+        font-size: font("sm");
     }
     &-right {
-        
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -32,23 +36,22 @@
         z-index: 999;
     }
     &-logo {
-       
         color: white;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: font('sm');
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: font("sm");
         padding: $espaciado-8 $espaciado-16;
     }
-    &-logo2{
-        color:rgb(255, 241, 44);
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: font('sm');
+    &-logo2 {
+        color: rgb(255, 241, 44);
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: font("sm");
         padding: $espaciado-8 4px;
     }
     &-user {
         padding-left: $espaciado-20;
         padding-right: $espaciado-20;
-        i{
-            font-size: font('s');
+        i {
+            font-size: font("s");
         }
     }
     &-bars {
@@ -81,7 +84,7 @@
     // a:hover {
     //     color: white;
     // }
-    &-links{
+    &-links {
         color: white;
         font-size: 20px;
     }
@@ -107,21 +110,20 @@
     right: 10px;
     transform: translateY(-50%);
     margin-top: $espaciado-32;
-    
 
     &-clicado {
         transition: transform 0.8s ease-out;
         transform: translateY(0);
         padding: $espaciado-0 $espaciado-16 $espaciado-20 $espaciado-20;
         position: absolute;
-        top: $espaciado-20;
+        top: 33px;
         right: 0px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         width: 100%;
         height: 100vh;
-        
+        background-color: black;
     }
 }
 //Esto hay que meterlo arriba
@@ -140,7 +142,6 @@
     }
     .menu-bars-contenido {
         margin-top: $espaciado-32;
-
     }
     .navbar-links {
         padding: $espaciado-16;
@@ -153,9 +154,8 @@
     flex-direction: column;
     margin-top: $espaciado-56;
     width: 100%;
-    font-size: font('sm');
+    font-size: font("sm");
 }
-
 
 // .navbar{
 //     background-color: white;

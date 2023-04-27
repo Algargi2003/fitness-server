@@ -1,0 +1,25 @@
+.card{
+
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+
+    &-recetas{
+        background-color: blue;
+    }
+    &-rutinas{
+        background-color: rgb(168, 214, 27);
+    }
+    &-alimentos{
+        background-color: rgb(255, 175, 114);
+    }
+    &-calcular{
+        background-color: rgb(255, 107, 220);
+    }
+    &-tienda{
+        background-color: rgb(124, 132, 38);
+    }
+    &-blog{
+        background-color: purple;
+    }
+}
