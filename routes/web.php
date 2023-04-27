@@ -22,7 +22,7 @@ use App\Http\Controllers\TestsController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('components/home');
+    return Inertia::render('components/home/home');
 });
 
 Route::get('/dashboard', function () {

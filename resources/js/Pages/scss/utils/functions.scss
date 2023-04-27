@@ -1,0 +1,3 @@
+@function getColor($key, $index) {
+	@return nth(map-get($colors, $key), $index + 1);
+}

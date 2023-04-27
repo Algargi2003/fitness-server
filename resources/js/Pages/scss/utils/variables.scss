@@ -1,0 +1,65 @@
+$colors:(
+  "principal":(#0C2F45, #154B75, #1C63A0, #2578D0, #498CDF, #79A5E7, #A4BFEF, #D4DFF7, #FFFFFF),
+  "alternativo":(#025A14, #0E812B, #1FA846, #2FCA63, #58D586, #7FE1A8, #A9EFC8, #D1FAE6, #FFFFFF),
+  "grises":(#292929, #454545, #5E5E5E, #7A7A7A, #949494, #B0B0B0, #C9C9C9, #E6E6E6, #FFFFFF),
+  "blancos":(#EBEBEB, #EDEDED, #F0F0F0, #F2F2F2, #F5F5F5, #F7F7F7, #FAFAFA, #FCFCFC, #FFFFFF),
+  "rojos":(#811D1D, #981B1B, #BA1C1C, #DC2828, #EF4343, #F87272, #FCA6A6, #FEC8C8, #FEE1E1),
+  "azules":(#033863, #054C94, #0860C4, #0B6CF4, #3C83F6, #6D9BF8, #9DB9FB, #CEDAFD, #FFFFFF),
+  "verdes":(#01190D, #044427, #076940, #0C9261, #10B77F, #12E2A7, #2DF0C0, #55F6D6, #79FCE6),
+  "amarillos":(#76350F, #91400D, #B35309, #DB7706, #F59F0A, #FBBD23, #FCD44F, #FDE68B, #FEF3C8),
+  "negros":(#5e7a7e, #526b6e, #475c5f, #3b4c4f, #2f3d3f, #232e2f, #181f20, #0c0f10, #000000)
+  );
+
+
+
+
+$bk-principal:#41474f;
+$color-white:white;
+$red:rgb(224, 18, 18);
+
+$bk-grey:#f1f1f1;
+$verde:rgb(22, 150, 22);
+$grey:rgb(187, 187, 187);
+
+$bk-verde-alerta:#d4edda;
+$bk-verde-alerta-carga:#1b701b;
+$color-verde-alerta:#155724;
+$borde-alerta:#c3e6cb;
+
+
+$breakpoints: (
+    'xs': 370px,
+    'sm': 475px, 
+    's': 600px, 
+    'md': 768px,
+    'l': 1024px,
+    'xl': 1280px,
+    'xxl': 1400px
+);
+
+$font-size: (
+    '4xs':10px,
+    '3xs':12px,
+    '2xs':16px,
+    'xs':20px,
+    's':22px,
+    'sm':26px,
+    'm':30px,
+    'ml':36px,
+    'l':38px,
+    'xl':40px,
+    '2xl':46px,
+    '3xl':66px
+);
+
+$espaciado-0: 0px;
+$espaciado-8: 8px;
+$espaciado-16: 16px;
+$espaciado-20: 20px;
+$espaciado-24: 24px;
+$espaciado-32: 32px;
+$espaciado-40: 40px;
+$espaciado-48: 48px;
+$espaciado-56: 56px;
+$espaciado-xl: 112px;
+

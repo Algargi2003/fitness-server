@@ -1,0 +1,177 @@
+@import "../../scss/utils/mixin.scss";
+@import "../../scss/utils/variables.scss";
+@import "../../scss/utils/functions.scss";
+
+
+.navbar {
+    background-color: transparent;
+    // padding: 8px;
+    padding-bottom: 60px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    font-size: font('2xs');
+    
+
+    i {
+        font-size: font('sm');
+    }
+    &-right {
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: white;
+        gap: 60px;
+        justify-content: space-between;
+        margin-right: 40px;
+    }
+    &-left {
+        position: absolute;
+        z-index: 999;
+    }
+    &-logo {
+       
+        color: getColor('blancos',0);
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: font('sm');
+        padding: $espaciado-8 $espaciado-16;
+    }
+    &-user {
+        padding-left: $espaciado-20;
+        padding-right: $espaciado-20;
+        i{
+            font-size: font('s');
+        }
+    }
+    &-bars {
+        width: 35px;
+        // padding-top: $espaciado-16;
+    }
+    &-bars span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        margin-bottom: $espaciado-8;
+        transition: all 300ms;
+        transform-origin: 0px 100%;
+    }
+    //Para los links
+    // .links {
+    //     height: 20px;
+    //     transition: all 0.5s;
+    // }
+    // .navbar-links::after {
+    //     content: "";
+    //     display: block;
+    //     background-color: white;
+    //     height: 2px;
+    //     width: 0%;
+    //     border-radius: 16px;
+    //     transition: all 0.3s;
+    // }
+    // a:hover {
+    //     color: white;
+    // }
+    &-links{
+        font-size: 20px;
+    }
+    &-links:hover {
+        color: blue;
+        transition: all 300ms;
+    }
+}
+//Para la animación de la hamburguesa
+.active-menu-bars-linea1 {
+    transform: rotate(45deg) translate(-2px, 1px);
+}
+.active-menu-bars-linea2 {
+    opacity: 0;
+    margin-left: -30px;
+}
+.active-menu-bars-linea3 {
+    transform: rotate(-45deg) translate(-4px, 2px);
+}
+//Esto para que aparezca en vertical el contenido del menú
+.menu-bars-contenido {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    margin-top: $espaciado-32;
+    
+
+    &-clicado {
+        transition: transform 0.8s ease-out;
+        transform: translateY(0);
+        padding: $espaciado-0 $espaciado-16 $espaciado-20 $espaciado-20;
+        position: absolute;
+        top: $espaciado-20;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+    }
+}
+//Esto hay que meterlo arriba
+@media (min-width: 739px) {
+    .navbar-bars span {
+        visibility: hidden;
+        display: none;
+    }
+}
+@media (max-width: 739px) {
+    .navbar-right {
+        visibility: hidden;
+        display: none;
+        gap: 0px;
+        margin-right: 0px;
+    }
+    .menu-bars-contenido {
+        margin-top: $espaciado-32;
+
+    }
+    .navbar-links {
+        padding: $espaciado-16;
+    }
+}
+//Esto si lo meto dentro del padre no va
+.navbar-horizontal {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    margin-top: $espaciado-56;
+    width: 100%;
+    font-size: font('sm');
+}
+
+
+// .navbar{
+//     background-color: white;
+//     box-shadow: 0px 1px 5px 1px rgba(0,0,0, 0.1);
+//     border-bottom: 1px solid rgba(0,0,0,0.1);
+//     a{
+//         color:$bk-principal;
+
+//         &:hover{
+//             color: $bk-principal;
+//         }
+//     }
+
+//     .navbar-links::after{
+//         background-color: $bk-principal !important;
+//     }
+
+//     &-bars span{
+//         background-color: $bk-principal;
+//     }
+
+//     .menu-bars-contenido-clicado{
+//         background-color: white;
+//     }
+// }

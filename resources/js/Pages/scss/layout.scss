@@ -1,0 +1,23 @@
+@import "../scss/utils/mixin.scss";
+@import "../scss/utils/variables.scss";
+main{
+    // margin-top: 20px;
+    // margin-left: 20px;
+    // min-height: 90svh;
+    // min-height: 90vh;
+    margin-bottom: $espaciado-56;
+    width: 100%;
+    font-family: 'Arial';
+
+    // @include breakpoint('l'){
+        //     margin-top: 50px;
+        // }
+}
+    
+a:hover{
+    color: inherit;
+    cursor: pointer;
+}
+*{
+    font-family:'Century Gothic', 'monospace';
+}

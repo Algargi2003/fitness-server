@@ -1,0 +1,14 @@
+@import "./variables.scss";
+
+@mixin breakpoint($bk){
+    $break:map-get($map: $breakpoints, $key:$bk );
+    @media (min-width : $break) {
+        @content
+    }
+}
+
+
+@function font($param){
+    $size:map-get($font-size,$param);
+    @return $size;
+}
