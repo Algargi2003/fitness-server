@@ -1,3 +1,69 @@
-.imagen-inicio{
-    margin-top: -60px;
+@import "../../scss/utils/mixin.scss";
+@import "../../scss/utils/variables.scss";
+@import "../../scss/utils/functions.scss";
+
+
+.fondo {
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        180deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(67, 67, 228, 1) 30%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    
+    
+    // @include breakpoint("md") {
+    //     background-image: url("../../../Images/fotoInicio4.jpg");
+    //     background-repeat: no-repeat;
+    //     background-size: 100%;
+        
+    // }
+}
+
+.home{
+
+
+    &-texto-inicio{
+        padding-top: 30px;
+        margin-left: 70px;
+        color: white;
+        font-size: 30px;
+    }
+    &-foto{
+        width: 100%;
+    }
+    &-video{
+        width: 100%;
+    }
+    &-info1{
+        height: 300px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-titulo{
+            color: rgb(255, 241, 44);
+            text-align: center;
+            padding-top: 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        &-texto{
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            width: 50%;
+        }
+    }
+    &-info2{
+        display: flex;
+        flex-direction: column;
+        &-titulo{
+
+        }
+
+    }
 }

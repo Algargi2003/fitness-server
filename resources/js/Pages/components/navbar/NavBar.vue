@@ -24,7 +24,7 @@ window.addEventListener("resize", () => {
         <nav class="navbar">
             <div class="navbar-left">
                 <a href="/"
-                    ><div class="navbar-logo">FITNESS APP</div></a
+                    ><div class="navbar-logo"><span class="navbar-logo2">FITNESS</span>APP</div></a
                 >
             </div>
             <div
@@ -54,7 +54,7 @@ window.addEventListener("resize", () => {
                     "
                 >
                     <a  class="navbar-links">
-                        Hola1
+                        Recetas
                     </a>
                     <a  class="navbar-links">
                         Hola2
@@ -63,7 +63,7 @@ window.addEventListener("resize", () => {
                         Hola3
                     </a>
                     <a  class="navbar-links">
-                        Hola4
+                        <img src="../../../Images/usuario.png" width="40px">
                     </a>
                     
                 </div>

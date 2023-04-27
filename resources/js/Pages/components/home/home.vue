@@ -1,5 +1,17 @@
 <template>
     <Layout>
+        <img src="../../../Images/fotoGimnasio.jpg" alt="foto Gimnasio" class="home-foto">
+        <div class="home-info1">
+            <div class="home-info1-titulo">REGÍSTRATE AHORA</div>
+            <div class="home-info1-texto">Y obtén acceso a la mejor plataforma fitness, donde podrás obtener una dieta adecuada para tí, y una rutina de ejercicios</div>
+            
+        </div>
+        <video  autoplay muted loop class="home-video">
+            <source  src="../../../videos/videoInicio.mp4">
+        </video>
+        <div class="home-info2">
+            <div class="home-info2-titulo">CATEGORÍAS</div>
+        </div>
         <!-- <table border="solid">
         <tr>
             <th>id</th>
@@ -10,8 +22,8 @@
             <td>{{ ingrediente.nombre }}</td>
         </tr>
     </table> -->
-    <img v-if="width>768" src="../../../Images/fotoInicio2.jpg" class="imagen-inicio" alt="">
-    <img v-else src="../../../Images/fotoInicio2-movil2.jpg" class="imagen-inicio">
+    
+    <!-- <img v-else src="../../../Images/fotoInicio2-movil2.jpg" class="imagen-inicio"> -->
     </Layout>
     
 </template>
