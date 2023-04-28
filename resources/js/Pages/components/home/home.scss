@@ -29,6 +29,7 @@
     }
     &-foto {
         width: 100%;
+        @include  breakpoint('l'){}
     }
     &-video {
         width: 100%;

@@ -1,10 +1,14 @@
 <template>
     <Layout>
-        <img
+        <img v-if="width<1024"
             src="../../../Images/fotoGimnasio.jpg"
             alt="foto Gimnasio"
             class="home-foto"
         />
+        <img v-else
+        src="../../../Images/fotoGimnasio2.jpg"
+            alt="foto Gimnasio"
+            class="home-foto">
         <div class="home-info1">
             <div class="home-info1-titulo">REGÍSTRATE AHORA</div>
             <div class="home-info1-texto">
